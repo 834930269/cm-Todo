@@ -1,0 +1,45 @@
+{% for note in notes %}
+	{% if note.ntype==1 %}
+		<div class="memo-container">
+			<div class="memo" data-completed="false" style="height: 345.5px;">
+				<div class="mark"></div>	
+				<div class="memo-heading">
+					<h5 class="title">{{ note.id }}.{{ note.title }}</h5>
+					<ul class="tools">
+						<li class="edit" data-toggle="modal" data-target="#update-markdown" data-id="{{ note.id }}" data-title="{{ note.title }}" data-ct="{{ note.content_text }}" data-category="{{ note.category }}"></li>
+						<li class="delete"></li>
+					</ul>
+				</div>
+				<h6 class="memo-info">
+					<span class="timeStamp">{{ note.alt_time }}</span>
+					<span class="category">分类: {{ note.category }}</span>
+				</h6>
+				<div class="content" data-type="text" style="height: 262.5px;">
+					<div class="text">
+						{{ note.content_html |safe }}
+					</div>
+				</div>
+			</div>
+		</div>
+	{% elif note.ntype==2 %}
+		<div class="memo-container">
+			<div class="memo" data-completed="false" style="height: 345.5px;">
+				<div class="mark"></div>	
+				<div class="memo-heading">
+					<h5 class="title">{{ note.id }}.{{ note.title }}</h5>
+					<ul class="tools">
+						<li class="edit" data-toggle="modal" data-target="#update-canvas" data-id="{{ note.id }}" data-title="{{ note.title }}" data-imgurl="{{ note.imgurl }}" data-category="{{ note.category }}"></li>
+						<li class="delete"></li>
+					</ul>
+				</div>
+				<h6 class="memo-info">
+					<span class="timeStamp">{{ note.alt_time }}</span>
+					<span class="category">分类: {{ note.category }}</span>
+				</h6>
+				<div class="content" data-type="doodle" style="height: 262.5px;">
+					<img class="doodle" src="{{ note.imgurl }}?timestamp={{ tsc }}">
+				</div>
+			</div>
+		</div>
+	{% endif %}
+{% endfor %}

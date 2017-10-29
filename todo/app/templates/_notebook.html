@@ -1,0 +1,135 @@
+<!-- edit-canvas -->
+<div class="modal fade" id="edit-canvas" tabindex="-1" role="dialog" aria-labelledby="edit-canvasLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="padding:10px;">
+      <div class="editor-top ">
+		<label class="control-label" for="body">标题:</label>
+		<input id="tt2" class="editor-title form-control" placeholder="标题" type="text">
+		<label for="name">请选择涂鸦类型:</label>
+        <select id="usertype2" name="usertype" class="selectpicker show-tick form-control"  data-live-search="false" style="width:40%">
+            <option value="学习">学习</option>
+            <option value="生活">生活</option>
+            <option value="工作">工作</option>
+        </select>
+      </div>
+      <div class="modal-body">
+		<ul class="doodle-colors">
+			<li data-color="black"></li>
+			<li data-color="green"></li>
+			<li data-color="yellow"></li>
+			<li data-color="red"></li>
+			<li data-color="white"></li>
+		</ul>
+		<ul class="doodle-controllers">
+			<li class="undo"></li>
+			<li class="redo"></li>
+			<li class="clear"></li>
+		</ul>
+		<canvas id="cv" class="doodle-content" width="300px" height="300px" style="margin-left:20%;margin-right:20%;margin-top:30px;border:1px solid #000;"></canvas>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+		<button id="btn2" type="button" class="btn btn-primary">
+					完成
+		</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- edit-markdown -->
+<div class="modal fade" id="edit-markdown" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="padding:10px;">
+      <div class="editor-top ">
+		<label class="control-label" for="body">标题:</label>
+		<input id="tt1" class="editor-title form-control" placeholder="标题" type="text">
+		<label for="name">请选择日记类型:</label>
+        <select id="usertype1" name="usertype" class="selectpicker show-tick form-control"  data-live-search="false" style="width:40%">
+            <option value="学习">学习</option>
+            <option value="生活">生活</option>
+            <option value="工作">工作</option>
+        </select>
+      </div>
+      <div class="modal-body">
+		<label class="control-label" for="body">请在此输入内容:</label>
+		<textarea id="ct" class="text-content form-control" placeholder="内容" style="width: 100%;
+height: 262px;"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+		<button id="btn1" type="button" class="btn btn-primary">
+					完成
+		</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- update-canvas -->
+<div class="modal fade" id="update-canvas" tabindex="-1" role="dialog" aria-labelledby="update-canvasLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="padding:10px;">
+      <div class="editor-top ">
+		<label class="control-label" for="body">标题:</label>
+		<input id="tt4" class="editor-title form-control" placeholder="标题" type="text">
+		<label for="name">请选择涂鸦类型:</label>
+        <select id="usertype4" name="usertype" class="selectpicker show-tick form-control"  data-live-search="false" style="width:40%">
+            <option value="学习">学习</option>
+            <option value="生活">生活</option>
+            <option value="工作">工作</option>
+        </select>
+      </div>
+      <div class="modal-body">
+		<ul id="cc2" class="doodle-colors">
+			<li data-color="black"></li>
+			<li data-color="green"></li>
+			<li data-color="yellow"></li>
+			<li data-color="red"></li>
+			<li data-color="white"></li>
+		</ul>
+		<ul id="cl2" class="doodle-controllers">
+			<li class="undo"></li>
+			<li class="redo"></li>
+			<li class="clear"></li>
+		</ul>
+		<canvas id="cv2" class="doodle-content" width="300px" height="300px" style="margin-left:20%;margin-right:20%;margin-top:30px;border:1px solid #000;"></canvas>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+		<button id="btn4" type="button" class="btn btn-primary">
+					修改
+		</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- update-markdown -->
+<div class="modal fade" id="update-markdown" tabindex="-1" role="dialog" aria-labelledby="update-markdownLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="padding:10px;">
+      <div class="editor-top ">
+		<label class="control-label" for="body">标题:</label>
+		<input id="tt3" class="editor-title form-control" placeholder="标题" type="text">
+		<label for="name">请选择日记类型:</label>
+        <select id="usertype3" name="usertype" class="selectpicker show-tick form-control"  data-live-search="false" style="width:40%">
+            <option value="学习">学习</option>
+            <option value="生活">生活</option>
+            <option value="工作">工作</option>
+        </select>
+      </div>
+      <div class="modal-body">
+		<label class="control-label" for="body">请在此输入内容:</label>
+		<textarea id="ct2" class="text-content form-control" placeholder="内容" style="width: 100%;
+height: 262px;"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+		<button id="btn3" type="button" class="btn btn-primary">
+					修改
+		</button>
+      </div>
+    </div>
+  </div>
+</div>

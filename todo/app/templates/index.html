@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% import "_macros.html" as macros %}
+{% block title %}paint{% endblock %}
+{% block head %}
+{{ super() }}
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/paint.css">
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+{% endblock %}
+{% block page_content %}
+	<div id="memos" class="container">
+		{% include '_notes.html' %}
+		{% if pagination %}
+		<div class="pagination">
+			{{ macros.pagination_widget(pagination, '.show') }}
+		</div>
+		{% endif %}
+	</div>
+
+	{% include '_notebook.html' %}
+
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+    <script src="/static/paint.js"></script>
+    <script src="/static/js/notebook.js"></script>
+{% endblock %}

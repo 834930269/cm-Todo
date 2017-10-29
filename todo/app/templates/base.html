@@ -1,0 +1,153 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}地平线上的一匹狼{% endblock %}
+
+{% block head %}
+{{ super() }}
+<meta name="baidu-site-verification" content="apcknbYAhR" />
+<link rel="icon" href="/static/favicon.ico?t=1" type="image/x-icon">
+<link rel="stylesheet" href="/static/memo.css" type="text/css">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+</script>
+
+{% endblock %}
+{% block navbar %}
+<canvas id="canvas" style="z-index:-1;position:fixed"></canvas>
+<script type="text/javascript" src="/static/Canve-style.js"></script>
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="{{ url_for('main.index') }}">主页</a></li>
+            </ul>
+			<ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">新建日志<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a  data-toggle="modal" data-target="#edit-canvas">新建涂鸦日志</a></li>
+                        <li><a  data-toggle="modal" data-target="#edit-markdown">新建文本日志</a></li>
+                    </ul>
+                </li>
+			</ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+{% block page_content %}{% endblock %}
+<footer id="copyright" class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <h4>Copyright &copy; 地平线上的一匹狼</h4>
+            </div>               
+            <div class="col-sm-2">
+                <h4>关于本站</h4>
+                <p>站长是一名在校大学生啦,因为在学Flask...所以跟着狗书,并通过一些自己的想法开发了本站,希望各位姥爷能多多提点建议,给我增加一些难题也好喔!
+                </p>
+            </div>                
+            <div class="col-sm-2">
+                <h4>导航</h4>
+                <ul class="unstyled">
+				
+                    <li><span class=" glyphicon glyphicon-hand-right" aria-hidden="true"></span> [<a href="/">主页</a>]</li>
+                    <li><span class=" glyphicon glyphicon-hand-right" aria-hidden="true"></span> [<a href="/user/Aaron">狼兄档案</a>]</li>
+                    <li><span class=" glyphicon glyphicon-hand-right" aria-hidden="true"></span>  [<a href="tencent://Message/?Uin=2622303427&websiteName=q-zone.qq.com&Menu=yes" target="_blank">联系狼兄</a>]</li>
+                </ul>
+            </div>                
+            <div class="col-sm-2">
+                <h4>狼兄相关</h4>
+                <ul class="unstyled">
+                    <li><span class="glyphicon glyphicon-link" aria-hidden="true"></span>  [<a href="http://be-sunshine.cn" target="_blank">博客一</a>]</li>
+                    <li><span class="glyphicon glyphicon-link" aria-hidden="true"></span>  [<a href="http://be-sunshine.cn:81" target="_blank">博客二</a>]</li>
+                    <li><span class="glyphicon glyphicon-link" aria-hidden="true"></span>  [<a href="tencent://Message/?Uin=2622303427&websiteName=q-zone.qq.com&Menu=yes" target="_blank">狼主QQ</a>]</li>
+                    <li><span class="glyphicon glyphicon-link" aria-hidden="true"></span>  [<a href="https://github.com/834930269" target="_blank">狼主Github</a>]</li>
+                </ul>                    
+            </div>             
+            <div class="col-sm-2">
+				<br/>
+                <h5>本网站由<span class="glyphicon glyphicon-heart"></span>Aaron制作</h5>
+				<h5>网站链接<span class="glyphicon glyphicon-heart"></span>wolf.be-sunshine.cn</h5>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+	<script type="text/javascript">
+		// 一个小小的视觉效果
+		$('body').on('mousemove', (evt) => {
+			$('body')
+				.css('background-position-x', Math.ceil(evt.pageX / 40))
+				.css('background-position-y', Math.ceil(evt.pageY / 40));
+		});
+		window.ondeviceorientation = (evt) => {
+			$('body')
+				.css('background-position-x', evt.gamma)
+				.css('background-position-y', evt.beta);
+		};
+		var aa=function(){
+			if($(window).height()==$(document).height()){
+				$(".copyright").addClass("navbar-fixed-bottom");
+			}
+			else{
+				$(".copyright").removeClass(" navbar-fixed-bottom");
+			}
+		}
+		aa();
+	</script>
+    <script src="/static/floating.js"></script>
+	<script>
+	floating({
+      content: "我有一个梦想-Be a super hero!",
+      number: 1,
+      duration: 22,
+	  size:1
+    });
+	floating({
+      content: "我有一个朋友-His name is hope!",
+      number: 1,
+      duration: 20,
+	  size:1
+    });
+	floating({
+      content: "我终其一生所追寻的-It's my dream.",
+      number: 1,
+      duration: 30,
+	  size:1,
+	  direction:'reverse'
+    });
+	floating({
+      content: "Keep moving forward.时间会给你答案.",
+      number: 1,
+      duration: 22,
+	  size:1,
+	  direction:'reverse'
+    });
+	floating({
+      content: "就像《阿甘正传》那样.Stupid is as stupid does.",
+      number: 1,
+      duration: 20,
+	  size:1,
+	  direction:'reverse'
+    });
+	floating({
+      content: "希望你能开心每一天. : )",
+      number: 1,
+      duration: 30,
+	  size:1
+    });
+	</script>
+{{ moment.include_moment() }}
+{% endblock %}
